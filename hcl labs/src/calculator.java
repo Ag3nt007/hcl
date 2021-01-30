@@ -3,21 +3,28 @@ import java.io.IOException;
 
 public class calculator {
 	public static void main(String [] args) throws IOException{
-		int a;
-		int b;
+		float a;
+		float b;
 		char oper;
-		double answer = 0.0;
+		float answer = 0;
 		
 		Scanner input = new Scanner (System.in);
 		
 		System.out.println("Enter first number." );
-		a = input.nextInt();
+		a = input.nextFloat();
 	        
-		System.out.println("What operation? Enter '+', '-', 'x', or '/'");
-		oper = input.next().charAt(0);
+		do
+		{
+			System.out.println("What operation? Enter '+', '-', 'x', or '/'.");
+			oper = input.next().charAt(0);
+		}
+		while(oper != '+' && oper != '-' && oper != 'x' && oper != '/');
+		
 		
 		System.out.println("Enter second number." );
-		b = input.nextInt();
+		b = input.nextFloat();
+		
+		input.close();
 		
 		switch(oper) {
 		case '+': answer = a + b;
@@ -29,6 +36,7 @@ public class calculator {
 		case '/': answer = a / b;
 		break;
 		}
+		
 		System.out.println(a+" "+oper+" "+b+" = "+answer);
 	}
 }
