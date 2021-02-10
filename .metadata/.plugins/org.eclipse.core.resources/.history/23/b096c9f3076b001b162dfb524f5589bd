@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class FileWrite {
+
+public static void main(String [] args)
+{
+	System.out.println("Would you like to create a new file? Enter y/n: ");
+	 Scanner scan = new Scanner(System.in);
+	 char i = scan.next().charAt(0);
+	switch(i) {
+	case 'y': {
+	try {
+		System.out.println("Enter file name: ");
+		Scanner filename = new Scanner(System.in);
+		String fn = filename.nextLine().trim();
+		File nf = new File(fn + ".txt");
+		if(nf.createNewFile())
+		{
+			System.out.println("New file created: " + nf);
+			System.out.println("Would you like to edit" + nf + "? Enter y/n: ");
+			char x = (char)System.in.read();
+			switch(x) {
+			case 'y': try {
+			      FileWriter writer = new FileWriter(nf);
+			      writer.write("Do you know the way?");
+			      writer.close();
+			System.out.println("Successfully wrote to the file.");
+			filename.close();
+			} 
+			catch (IOException e) {
+		        System.out.println("An error occurred.");
+		        e.printStackTrace();
+		        }
+			break;
+			case 'n': System.out.println("Have a nice day!");
+			break;
+					}
+		}
+		else
+		{
+			System.out.println("File already exists.");
+		}
+	}
+	catch (IOException e)
+	{
+		System.out.println("An error occured.");
+		e.printStackTrace();
+	}
+	break;
+	}
+	case 'n': System.out.println("Have a nice day!");
+	break;
+	}
+}
+}
