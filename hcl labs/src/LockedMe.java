@@ -77,7 +77,7 @@ public class LockedMe {
     	    	Scanner sc2 = new Scanner(System.in);
     	    	String add = sc2.next();
     	        try {
-    	            File tbAdded = new File("C:\\Users\\" + username + "\\eclipse-workspace\\hcl labs\\Test Files\\" + add);
+    	            File tbAdded = new File("C:\\Users\\" + username + "\\Desktop\\" + add);
     	            if (tbAdded.createNewFile()) {
     	              System.out.println("File created: " + tbAdded.getName());
     	            } else {
@@ -92,7 +92,7 @@ public class LockedMe {
     	    	System.out.println("Enter file name to delete: ");
     	    	Scanner sc3 = new Scanner(System.in);
     	    	String delete = sc3.next();
-    		    File tbDeleted = new File("C:\\Users\\" + username + "\\eclipse-workspace\\hcl labs\\Test Files\\" + delete); 
+    		    File tbDeleted = new File("C:\\Users\\" + username + "\\Desktop\\" + delete); 
     		    if (tbDeleted.delete()) { 
     		      System.out.println("Deleted the file: " + tbDeleted.getName());
     		    }
@@ -122,7 +122,7 @@ public class LockedMe {
     	System.out.println("Enter file name to search for: ");
     	Scanner sc4 = new Scanner(System.in);
         String s =  sc4.nextLine();
-        File file = new File("C:\\Users\\" + username + "\\eclipse-workspace\\hcl labs\\Test Files\\" + s); 
+        File file = new File("C:\\Users\\" + username + "\\Desktop\\" + s); 
         if (file.isFile())
             System.out.println("Found " + s);
         else
@@ -134,7 +134,7 @@ public class LockedMe {
     	try
     	{
     	String username = System.getProperty("user.name");
-    	File dir = new File("C:\\Users\\" + username + "\\eclipse-workspace\\hcl labs\\Test Files");
+    	File dir = new File("C:\\Users\\" + username + "\\Desktop");
 		File[] files = dir.listFiles();
 		for(File file:files)
 	        System.out.println(file.getName());
