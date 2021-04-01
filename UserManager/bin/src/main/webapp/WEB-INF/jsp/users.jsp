@@ -23,9 +23,6 @@ table, th, td {
   </c:forEach>
 </table>
 
-<br><br><br><br><br><br><br><br>
-
-<a href="/">Go Back To Home</a> 
 
 </body>
 </html>

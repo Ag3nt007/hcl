@@ -9,8 +9,6 @@ import com.example.UserManager.entities.User;
 import com.example.UserManager.exceptions.UserNotFoundException;
 import com.example.UserManager.repositories.UserRepository;
 
-
-
 @Service
 public class UserService {
 	
@@ -19,33 +17,21 @@ public class UserService {
 	
 	
 
-    public Iterable<User> GetAllUsers()
-    {
+    public Iterable<User> getAllUsers(){
         return userRepository.findAll();
     }
 
-
-    public User GetUserByName(String name) {
-        User foundUser = userRepository.findByName(name);
-        return foundUser;
-    }
-    
-    public User GetUserById(int id) {
+    public User getUserById(int id) {
     	Optional<User> foundUser = userRepository.findById(id);
-    	
-    	
-    	//TODO: we need to decide how to handle a "Not Found" condition
-    	
+    	    	
     	if (!foundUser.isPresent()) {
-    		throw new UserNotFoundException();
+    		return null;
     	}
     	
-    	return(foundUser.get());
+    	return (foundUser.get());
     }
     
-    public void UpdateUser(User usertoUpdate) {
+    public void updateUser(User usertoUpdate) {
     	userRepository.save(usertoUpdate);
     }
-
-
 }
