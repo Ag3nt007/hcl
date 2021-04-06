@@ -1,0 +1,2 @@
+insert into users (username, email, password, roles) VALUES ('test', 'test@gmail.com', 'test', 'ROLE_USER');
+insert into users (username, email, password, roles) VALUES ('admin', 'admin@gmail.com', 'admin', 'ROLE_USER,ROLE_ADMIN');
