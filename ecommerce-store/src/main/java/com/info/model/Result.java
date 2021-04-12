@@ -2,7 +2,7 @@ package com.info.model;
 
 import java.util.Date;
 
-public class Result{
+public class Result {
     public String wrapperType;
     public String description;
     public String kind;

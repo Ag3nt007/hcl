@@ -2,13 +2,11 @@ package com.info.controller;
 
 import java.io.IOException;
 
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,10 +26,6 @@ import com.info.model.User;
 import com.info.service.CategoryService;
 import com.info.service.ProductService;
 import com.info.service.UserService;
-
-import me.tobiadeyinka.itunessearch.lookup.MusicLookup;
-import me.tobiadeyinka.itunessearch.search.MediaSearch;
-import me.tobiadeyinka.itunessearch.search.MusicSearch;
 
 @Controller
 @RequestMapping("/")
@@ -108,13 +102,10 @@ public class HomeController {
 	                return mv;
 	            }
 			} catch (JsonParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (JsonMappingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}  
         }
@@ -124,6 +115,5 @@ public class HomeController {
 	@GetMapping("error")
 	public String error() {
 		return "error";
-	}
-	
+	}	
 }
